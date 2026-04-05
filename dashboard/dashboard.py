@@ -2,9 +2,10 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os
 
 st.set_page_config(page_title="Bike Sharing Dashboard", layout="centered")
-
+parent_dir = os.path.dirname(os.path.abspath(__file__))
 
 @st.cache_data
 def load_data():
