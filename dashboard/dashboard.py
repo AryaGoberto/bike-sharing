@@ -5,12 +5,15 @@ import matplotlib.pyplot as plt
 import os
 
 st.set_page_config(page_title="Bike Sharing Dashboard", layout="centered")
-parent_dir = os.path.dirname(os.path.abspath(__file__))
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
 @st.cache_data
 def load_data():
-	hour_data = pd.read_csv("./hour.csv")
-	day_data = pd.read_csv("./day.csv")
+	hour_path = os.path.join(current_dir, "hour.csv")
+	day_path = os.path.join(current_dir, "day.csv")
+	hour_data = pd.read_csv(hour_path)
+	day_data = pd.read_csv(day_path)
+
 	return hour_data, day_data
 
 
